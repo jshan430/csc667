@@ -1,0 +1,145 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'hitme_game/styles.css' %}">
+    <title>Game Room</title>
+</head>
+
+<body>
+
+    <div class="container container-fluid">
+        <div class="jumbotron-gameroom">
+            <div class="row">
+                <div class="col-lg-6 col-md-4 col-sm-2 thumbnail">
+                    <img src="https://pbs.twimg.com/profile_images/1874281601/BlackjackIcon_400x400.png" alt="logo" class="img-logo-gameroom">
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-2">
+                    <h1 class="j-tron-text-gameroom">Gameroom</h1>
+                </div>
+            </div>
+        </div>
+        <!-- End of Jtron-->
+        <div class="row">
+            <div class="col-lg-4">
+                <button id="leave-button"><a href="lobby.html">Exit to Lobby</button></a>
+            </div>
+            <div class="col-lg-4">
+                <h1 class="dealer">Dealer</h1>
+                <div class="icard">
+                    <div class="top-card suit">A<br>&spades;</div>
+                    <div class="content-card suit">&spades;</div>
+                    <div class="bottom-card suit">A<br>&spades;</div>
+                </div>
+                <div class="icard2">
+                    <div class="top-card suit">J<br>&spades;</div>
+                    <div class="content-card suit">&spades;</div>
+                    <div class="bottom-card suit">J<br>&spades;</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <button id="leave-button"><a href="rules.html">Learn to Play</button></a>
+            </div>
+        </div>
+        <div class="row players">
+            <div class="col-lg-4">
+                <div class="player1">
+                    <div class="total">Bank $<span id="dollars">100</span><br>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn btn-sm">Max Bet</button>
+                    </div>
+                    <div class="icard">
+                        <div class="top-card suit">A<br>&spades;</div>
+                        <div class="content-card suit">&spades;</div>
+                        <div class="bottom-card suit">A<br>&spades;</div>
+                    </div>
+                    <div class="icard2">
+                        <div class="top-card suit">J<br>&spades;</div>
+                        <div class="content-card suit">&spades;</div>
+                        <div class="bottom-card suit">J<br>&spades;</div>
+                    </div>
+                    <p id="player">Player1</p>
+                    <div id="myactions">
+                        <button id="btnhold" type="button" onclick="cardAction('hold')" class="btn">Hold</button>
+                        <button id="btnhit" type="button" onclick="cardAction('hit')" class="btn">Hit</button>
+                        <button id="btndouble" type="button" onclick="cardAction('double')" class="btn">Double</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="player1">
+                    <div class="total">Bank $<span id="dollars">100</span><br>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn btn-sm">Max Bet</button>
+                    </div>
+                    <div class="icard">
+                        <div class="top-card suit">A<br>&spades;</div>
+                        <div class="content-card suit">&spades;</div>
+                        <div class="bottom-card suit">A<br>&spades;</div>
+                    </div>
+                    <div class="icard2">
+                        <div class="top-card suit">J<br>&spades;</div>
+                        <div class="content-card suit">&spades;</div>
+                        <div class="bottom-card suit">J<br>&spades;</div>
+                    </div>
+                    <p id="player">Player2</p>
+                    <div id="myactions">
+                        <button id="btnhold" type="button" onclick="cardAction('hold')" class="btn">Hold</button>
+                        <button id="btnhit" type="button" onclick="cardAction('hit')" class="btn">Hit</button>
+                        <button id="btndouble" type="button" onclick="cardAction('double')" class="btn">Double</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="player1">
+                    <div class="total">Bank $<span id="dollars">100</span><br>Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn btn-sm">Max Bet</button>
+                    </div>
+                    <div class="icard">
+                        <div class="top-card suit">A<br>&spades;</div>
+                        <div class="content-card suit">&spades;</div>
+                        <div class="bottom-card suit">A<br>&spades;</div>
+                    </div>
+                    <div class="icard2">
+                        <div class="top-card suit">J<br>&spades;</div>
+                        <div class="content-card suit">&spades;</div>
+                        <div class="bottom-card suit">J<br>&spades;</div>
+                    </div>
+                    <p id="player">Player3</p>
+                    <div id="myactions">
+                        <button id="btnhold" type="button" onclick="cardAction('hold')" class="btn">Hold</button>
+                        <button id="btnhit" type="button" onclick="cardAction('hit')" class="btn">Hit</button>
+                        <button id="btndouble" type="button" onclick="cardAction('double')" class="btn">Double</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row first-row">
+            <div class="col-lg-12">
+                <div class="gameroom-chat">
+                    <p>Game room Chat here</p>
+                    <div class="chat-box-contents">
+                        <input type="text" placeholder="your message here" style="width:85%"> <button>Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script id="websocket_js" src="{% static 'hitme_game/game_ws.js' %}" data-game="{{ game.url }}"></script>
+</body>
+
+</html>
